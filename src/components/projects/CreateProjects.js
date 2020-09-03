@@ -9,6 +9,7 @@ class CreateProject extends Component {
         summary: '',
         content: '',
         technologyUsed: '',
+        git: ''
     }
 
     handleChange = (e) => {
@@ -44,6 +45,11 @@ class CreateProject extends Component {
                     <div className="input-field">
                         <label htmlFor="content">Content</label>
                         <input type="text" id="content" onChange={this.handleChange}/>
+                    </div>
+
+                    <div className="input-field">
+                        <label htmlFor="git">Git link (Optional)</label>
+                        <input type="text" id="git" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
