@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Dashboard.css';
 
 class AboutDashboard extends Component {
     render() {
@@ -13,9 +14,11 @@ class AboutDashboard extends Component {
                     <div className="card-action grey-lighten-4 grey-text">
                         <div>
                         <p>Contact Info & links </p>
-                        <p>Phone number: 0210401707</p>
-                        <p>Email address: Jademmb@gmail.com</p>
-                        <a href="https://github.com/JadeMartin" className="blue-text">Github</a>
+                        <ul>
+                            <p><i className="material-icons blue-text">phone</i>0210401707</p>
+                            <p><i className="material-icons blue-text">email</i>Jademmb@gmail.com</p> 
+                        </ul>
+                        <a href="https://github.com/JadeMartin" className="icon"><img src="./img/git_icon.jpg" alt="Git" /></a>
                         </div>
                     </div>
                 </div>
