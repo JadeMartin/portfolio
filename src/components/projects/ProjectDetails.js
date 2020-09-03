@@ -1,13 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {firestoreConnect} from 'react-redux-firebase';
+import {compose} from 'redux';
+import {Redirect} from 'react-router-dom';
 
-const ProjectDetails = () => {
-    const project = {
-        title: "Project title",
-        summary: "Project summary",
-        content: "Project content",
-        technology: "Java, SQL"
-    }
-
+const ProjectDetails = (props) => {
+    const {project} = props;
     //TODO - Add optional icon and optional images? expand on formatting
 
     if(project) {
@@ -34,4 +32,17 @@ const ProjectDetails = () => {
 
 }
 
-export default ProjectDetails
+const mapStateToProps = (state, ownProps) => {
+    const id = ownProps.match.params.id;
+    const projects = state.firestore.data.projects;
+    const project = projects ? projects[id] : null;
+    return {
+        project,
+        auth: state.firebase.auth
+    }
+}
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([{collection: 'projects'}
+    ]))(ProjectDetails)
