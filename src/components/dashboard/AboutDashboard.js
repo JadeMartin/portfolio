@@ -15,8 +15,7 @@ class AboutDashboard extends Component {
                         <p>Contact Info & links </p>
                         <p>Phone number: 0210401707</p>
                         <p>Email address: Jademmb@gmail.com</p>
-                        <a href="#" className="blue-text">Github</a>
-                        <a href="#" className="blue-text">Linkedin</a>
+                        <a href="https://github.com/JadeMartin" className="blue-text">Github</a>
                         </div>
                     </div>
                 </div>
