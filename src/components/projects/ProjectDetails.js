@@ -19,7 +19,7 @@ const ProjectDetails = () => {
                         <p>{project.content}</p>
                     </div>
                     <div className="card-action grey-lighten-4 grey-text">
-                        <div>{project.technology}</div>
+                        <div>{project.technologyUsed}</div>
                     </div>
                 </div>
             </div>
