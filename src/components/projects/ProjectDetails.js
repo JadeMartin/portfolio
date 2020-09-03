@@ -2,21 +2,35 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
+import {Link} from 'react-router-dom';
+import {deleteProject} from '../../store/actions/projectActions';
 
 const ProjectDetails = (props) => {
-    const {project} = props;
+    const {project, auth} = props;
     //TODO - Add optional icon and optional images? expand on formatting
+    const adminOptions = auth.uid ? (
+        <p>
+            <Link to={'/update/' + project.id} key={project.id}> 
+                <i className="material-icons blue-text">settings</i>
+            </Link>
+            <a href="/" onClick={props.deleteProject}> 
+                <i className="material-icons blue-text">delete</i>
+            </a>
+        </p>
+    ) : null;
+
 
     if(project) {
         return (
             <div className="container section project-details">
                 <div className="card z-depth-0">
                     <div className="card-content">
-                        <span className="card-title">{project.title}</span>
+                        <span className="card-title">{project.title} </span>
                         <p>{project.content}</p>
                     </div>
                     <div className="card-action grey-lighten-4 grey-text">
                         <div>{project.technologyUsed}</div>
+                        <div>{adminOptions}</div>
                     </div>
                 </div>
             </div>
@@ -36,12 +50,19 @@ const mapStateToProps = (state, ownProps) => {
     const projects = state.firestore.data.projects;
     const project = projects ? projects[id] : null;
     return {
-        project,
+        project: {id, ...project},
         auth: state.firebase.auth
+
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        deleteProject: () => dispatch(deleteProject(ownProps.match.params.id))
     }
 }
 
 export default compose(
-    connect(mapStateToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     firestoreConnect([{collection: 'projects'}
     ]))(ProjectDetails)

@@ -7,14 +7,16 @@ const initState = {
             title: "Project title A",
             summary: "Project summary A",
             content: "Project content A",
-            technologyUsed: "Java, SQL"
+            technologyUsed: "Java, SQL",
+            git: "www.github.com"
         },
         {
             id:"2",
             title: "Project title B",
             summary: "Project summary B",
             content: "Project content B",
-            technologyUsed: "JavaScript, NOSQL, Firebase"
+            technologyUsed: "JavaScript, NOSQL, Firebase",
+            git: "www.github.com"
         }
     ]
 }
@@ -32,7 +34,26 @@ const projectReducer = (state = initState, action) => {
                 ...state,
                 authError: action.err.message
             };
-            
+        case 'UPDATE_PROJECT':
+            return {
+                ...state,
+                authError: null
+            };
+        case 'UPDATE_PROJECT_ERROR':
+            return {
+                ...state,
+                authError: action.err.message
+            };
+        case 'DELETE_PROJECT':
+            return {
+                ...state,
+                authError: null
+            }
+        case 'DELETE_PROJECT_ERROR':
+            return {
+                ...state,
+                authError: action.err.message
+            };
         default:
             return state;
     }

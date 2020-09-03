@@ -7,6 +7,8 @@ import AboutDashboard from './components/dashboard/AboutDashboard';
 import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn';
 import CreateProjects from './components/projects/CreateProjects';
+import UpdateProjects from './components/projects/UpdateProject';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Route path="/project/:id" component={ProjectDetails} />
           <Route path="/login" component={SignIn} />
           <Route path="/create" component={CreateProjects} />
+          <Route path="/update/:id" component={UpdateProjects} />
         </Switch>
       </div>
     </BrowserRouter>
