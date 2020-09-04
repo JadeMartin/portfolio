@@ -21,7 +21,7 @@ const ProjectDetails = (props) => {
     ) : null;
 
     const gitLink = project.git ? (
-        <a href={project.git} className="icon"><FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
+        <a href={project.git}> <FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
     ) : null;
 
 

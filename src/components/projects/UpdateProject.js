@@ -43,27 +43,27 @@ class CreateProject extends Component {
                     <h5 className="grey-text text-darken-3">Create Project</h5>
 
                     <div className="input-field">
-                        <label class="active">Title</label>
+                        <label className="active">Title</label>
                         <input type="text" id="title" onChange={this.handleChange} defaultValue={project.title}/>
                     </div>
 
                     <div className="input-field">
-                        <label class="active" >Summary</label>
+                        <label className="active" >Summary</label>
                         <input type="text" id="summary" onChange={this.handleChange} defaultValue={project.summary} />
                     </div>
 
                     <div className="input-field">
-                        <label class="active">Content</label>
+                        <label className="active">Content</label>
                         <input type="text" id="content" onChange={this.handleChange} defaultValue={project.content}/>
                     </div>
 
                     <div className="input-field">
-                        <label class="active">Git link (Optional)</label>
+                        <label className="active">Git link (Optional)</label>
                         <input type="text" id="git" onChange={this.handleChange} defaultValue={project.git}/>
                     </div>
 
                     <div className="input-field">
-                        <label class="active">TechnologyUsed (CSV)</label>
+                        <label className="active">TechnologyUsed (CSV)</label>
                         <input type="text" id="technologyUsed" onChange={this.handleChange} defaultValue={project.technologyUsed}/>
                     </div>
                     

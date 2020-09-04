@@ -8,6 +8,9 @@ import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn';
 import CreateProjects from './components/projects/CreateProjects';
 import UpdateProjects from './components/projects/UpdateProject';
+import UploadImage from './components/images/UploadProjectImage';
+import Images from './components/dashboard/ImageDashboard';
+import LinkImage from './components/images/LinkImage';
 
 
 
@@ -23,6 +26,9 @@ function App() {
           <Route path="/login" component={SignIn} />
           <Route path="/create" component={CreateProjects} />
           <Route path="/update/:id" component={UpdateProjects} />
+          <Route path="/images/upload" component={UploadImage} />
+          <Route path="/images" component={Images} />
+          <Route path="/image/:id" component={LinkImage} />
         </Switch>
       </div>
     </BrowserRouter>
