@@ -14,6 +14,7 @@
     "materialize-social": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
     "react-redux": "^7.2.1",
     "react-redux-firebase": "^3.7.0",
     "react-router-dom": "^5.2.0",

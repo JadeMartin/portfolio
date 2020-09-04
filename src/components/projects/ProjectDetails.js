@@ -4,7 +4,7 @@ import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {Link} from 'react-router-dom';
 import {deleteProject} from '../../store/actions/projectActions';
-import gitImage from '../../assets/git_icon.png'
+import { FaGithub } from 'react-icons/fa';
 
 const ProjectDetails = (props) => {
     const {project, auth} = props;
@@ -21,7 +21,7 @@ const ProjectDetails = (props) => {
     ) : null;
 
     const gitLink = project.git ? (
-        <a href={project.git} className="icon"><img src={gitImage} alt="Git" /></a>
+        <a href={project.git} className="icon"><FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
     ) : null;
 
 
@@ -30,13 +30,12 @@ const ProjectDetails = (props) => {
             <div className="container section project-details">
                 <div className="card z-depth-0">
                     <div className="card-content">
-                        <div className="right">{adminOptions}</div>
+                        <div className="right">{adminOptions}{gitLink}</div>
                         <span className="card-title">{project.title} </span>
                         <p>{project.content}</p>
                     </div>
                     <div className="card-action grey-lighten-4 grey-text">
                         <div>{project.technologyUsed}</div>
-                        <div className="right">{gitLink}</div>
                     </div>
                 </div>
             </div>

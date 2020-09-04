@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './aboutCard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-
+import {FaGithub, FaLinkedinIn, FaUniversity} from 'react-icons/fa';
+import { HiOutlineMailOpen } from 'react-icons/hi';
 class AboutDashboard extends Component {
     render() {
         return(
@@ -23,7 +22,7 @@ class AboutDashboard extends Component {
                                     <div className="emailAddress col s12 valign-wrapper">
                                         <div className="iconWrapper z-depth-2 iconsSolidBackground">
                                             <div className="icon">
-                                                <i className="material-icons left">email</i>
+                                                <HiOutlineMailOpen className="material-icons left" aria-hidden="true"/>
                                             </div>
                                         </div>
                                         <div className="textWrapper"> 
@@ -34,7 +33,7 @@ class AboutDashboard extends Component {
                                     <div className="geography col s12 valign-wrapper">
                                         <div className="iconWrapper z-depth-2 iconsSolidBackground">
                                             <div className="icon">
-                                                <i className="material-icons left">map</i>
+                                                <FaUniversity className="material-icons left" aria-hidden="true"/>
                                             </div>
                                         </div>
                                         <div className="textWrapper">
@@ -46,7 +45,7 @@ class AboutDashboard extends Component {
                                         <div className="iconWrapper z-depth-2 iconsSolidBackground">
                                             <div className="icon">
                                                 <a href="https://www.linkedin.com">
-                                                    <i className="material-icons left"></i><FontAwesomeIcon icon={faLinkedinIn} className="fab fa-lg iconsSolidBackground" aria-hidden="true"/>
+                                                    <FaLinkedinIn className="material-icons left iconsSolidBackground" aria-hidden="true"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -59,7 +58,7 @@ class AboutDashboard extends Component {
                                         <div className="iconWrapper z-depth-2 iconsSolidBackground">
                                             <div className="icon">
                                                 <a href="https://github.com/JadeMartin">
-                                                    <i className="material-icons left"></i><FontAwesomeIcon icon={faGithub} className="fab fa-lg iconsSolidBackground" aria-hidden="true" />
+                                                    <FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" />
                                                 </a>
                                             </div>
                                         </div>
