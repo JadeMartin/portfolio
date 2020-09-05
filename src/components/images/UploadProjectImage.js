@@ -54,18 +54,26 @@ class UploadImage extends Component {
         const {authError, auth} = this.props;
         if(!auth.uid) return <Redirect to='/'/>
         return (
-            <div>
-                <p>Upload project image</p>
-                <p>
-                    <progress value ={this.state.progress}max="100"/> {this.state.progress}%
-                </p>
-                <br />
-                <input type="file" onChange={this.handleChange} />
-                <button onClick={this.handleUpload}>Upload</button>
-                <div className="red-text center">
-                    {authError ? <p>{authError}</p> : null}
+            <div className="container" id="containerUpload">
+                <div className="row valign-wrapper" id="rowUpload">
+                    <div className="col s0 offset-s3 valign" >
+                        <div className="card hoverable" id="uploadCard">
+                            <div className="card-content">
+                                <span className="card-title">Upload project image</span>
+                                <progress value ={this.state.progress}max="100"/> {this.state.progress}%
+                            </div>
+                            <div className="card-action">
+                                <input type="file" onChange={this.handleChange} />
+                                <button onClick={this.handleUpload}>Upload</button>
+                                <div className="red-text center">
+                                    {authError ? <p>{authError}</p> : null}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         )
     }
 }

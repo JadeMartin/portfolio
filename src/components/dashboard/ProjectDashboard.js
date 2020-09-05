@@ -9,11 +9,8 @@ class ProjectDashboard extends Component {
         const {projects} = this.props;
         return(
             <div className="dashboard container">
-                <div className="row">
-                    <div className="col">
-                        <ProjectList projects={projects}/>
-                    </div>
-                </div>
+                <h1 className="white-text">Projects</h1>
+                <ProjectList projects={projects}/>
             </div>
         )
     }

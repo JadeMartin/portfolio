@@ -3,10 +3,12 @@ import ProjectImageSummary from './ProjectImageSummary';
 
 const ProjectImageList = ({images}) => {
     return (
-        <div className="imagelist section">
+        <div className="row center-cols center-align">
             { images && images.map(image => {
                 return (
-                    <ProjectImageSummary image={image}/>
+                    <div className="col m4" key={image.id}>
+                        <ProjectImageSummary image={image}/>
+                    </div>
                 )
             })}
         </div>

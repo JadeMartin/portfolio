@@ -3,10 +3,12 @@ import React from 'react';
 const ImageSummary = ({ image }) => {
     
     return (
-        <div className="card z-depth-0 project-summary">
-            <div className="card-content grey-text text-darken-3">
-                <span className="card-title center">{image.photoName}</span>
-                <p><img src={image.url} alt={image.photoName}/></p>
+        <div className="card hoverable">
+            <div className="card-image waves-effect waves-block waves-light">
+                <p><img className="responsive-img" src={image.url} alt={image.photoName}/></p>
+            </div>
+            <div className="card-content">
+                <p>{image.photoName}</p>
             </div>
         </div>
     )

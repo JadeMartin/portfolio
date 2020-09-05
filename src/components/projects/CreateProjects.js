@@ -28,43 +28,51 @@ class CreateProject extends Component {
         const {authError, auth} = this.props;
         if(!auth.uid) return <Redirect to='/'/>
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Create Project</h5>
+                    <form onSubmit={this.handleSubmit} >
+                        <div className="container" id="containerUpload">
+                            <div className="row valign-wrapper" id="rowUpload">
+                                <div className="col s0 offset-s3 valign" ></div>
+                                    <div className="card hoverable" id="createCard">
+                                        <div className="card-content">
+                                            <h5 className="card-title grey-text text-darken-3">Create new project</h5>
 
-                    <div className="input-field">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" id="title" onChange={this.handleChange}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label htmlFor="title">Title</label>
+                                                <input type="text" id="title" onChange={this.handleChange}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label htmlFor="summary">Summary</label>
-                        <input type="text" id="summary" onChange={this.handleChange}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label htmlFor="summary">Summary</label>
+                                                <input type="text" id="summary" onChange={this.handleChange}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label htmlFor="content">Content</label>
-                        <input type="text" id="content" onChange={this.handleChange}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label htmlFor="content">Content</label>
+                                                <input type="text" id="content" onChange={this.handleChange}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label htmlFor="git">Git link (Optional)</label>
-                        <input type="text" id="git" onChange={this.handleChange} />
-                    </div>
+                                            <div className="input-field">
+                                                <label htmlFor="git">Git link (Optional)</label>
+                                                <input type="text" id="git" onChange={this.handleChange} />
+                                            </div>
 
-                    <div className="input-field">
-                        <label htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
-                        <input type="text" id="technologyUsed" onChange={this.handleChange}/>
-                    </div>
-
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Create</button>
-                        <div className="red-text center">
-                            {authError ? <p>{authError}</p> : null}
+                                            <div className="input-field">
+                                                <label htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
+                                                <input type="text" id="technologyUsed" onChange={this.handleChange}/>
+                                            </div>
+                                        </div>
+                                    <div className="card-action">
+                                        <div className="input-field">
+                                            <button className="btn pink lighten-1 z-depth-0">Create</button>
+                                            <div className="red-text center">
+                                                {authError ? <p>{authError}</p> : null}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                 </form>
-            </div>
         )
     }
 }

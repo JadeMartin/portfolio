@@ -24,7 +24,7 @@ class CreateProject extends Component {
         e.preventDefault();
         const {project} = this.props;
         this.props.updateProject({
-            id: this.props.match.params.id,
+            id: project.id,
             title: this.state.title ? this.state.title : project.title,
             summary: this.state.summary ? this.state.summary : project.summary,
             content: this.state.content ? this.state.content : project.content,
@@ -38,44 +38,50 @@ class CreateProject extends Component {
         const {project, auth, authError} = this.props;
         if(!auth.uid) return <Redirect to='/'/>
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Create Project</h5>
+            <form onSubmit={this.handleSubmit} >
+                        <div className="container" id="containerUpload">
+                            <div className="row valign-wrapper" id="rowUpload">
+                                <div className="col s0 offset-s3 valign" ></div>
+                                    <div className="card hoverable" id="createCard">
+                                        <div className="card-content">
+                                            <h5 className="card-title grey-text text-darken-3">Create new project</h5>
 
-                    <div className="input-field">
-                        <label className="active">Title</label>
-                        <input type="text" id="title" onChange={this.handleChange} defaultValue={project.title}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="title">Title</label>
+                                                <input type="text" id="title" onChange={this.handleChange} defaultValue={project.title}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label className="active" >Summary</label>
-                        <input type="text" id="summary" onChange={this.handleChange} defaultValue={project.summary} />
-                    </div>
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="summary">Summary</label>
+                                                <input type="text" id="summary" onChange={this.handleChange} defaultValue={project.summary} />
+                                            </div>
 
-                    <div className="input-field">
-                        <label className="active">Content</label>
-                        <input type="text" id="content" onChange={this.handleChange} defaultValue={project.content}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="content">Content</label>
+                                                <input type="text" id="content" onChange={this.handleChange} defaultValue={project.content}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label className="active">Git link (Optional)</label>
-                        <input type="text" id="git" onChange={this.handleChange} defaultValue={project.git}/>
-                    </div>
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="git">Git link (Optional)</label>
+                                                <input type="text" id="git" onChange={this.handleChange} defaultValue={project.git}/>
+                                            </div>
 
-                    <div className="input-field">
-                        <label className="active">TechnologyUsed (CSV)</label>
-                        <input type="text" id="technologyUsed" onChange={this.handleChange} defaultValue={project.technologyUsed}/>
-                    </div>
-                    
-
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Create</button>
-                        <div className="red-text center">
-                            {authError ? <p>{authError}</p> : null}
-                        </div>
-                    </div>
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
+                                                <input type="text" id="technologyUsed" onChange={this.handleChange} defaultValue={project.technologyUsed}/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div className="input-field">
+                                            <button className="btn pink lighten-1 z-depth-0">Create</button>
+                                            <div className="red-text center">
+                                                {authError ? <p>{authError}</p> : null}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 </form>
-            </div>
         )
     }
 }
