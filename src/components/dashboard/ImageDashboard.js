@@ -13,7 +13,7 @@ class ProjectDashboard extends Component {
             <div className="dashboard container">
                 <div className="row">
                     <div className="col">
-                        <ImageList images={images}/>
+                        <ImageList images={images} />
                     </div>
                 </div>
             </div>

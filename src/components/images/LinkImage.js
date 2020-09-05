@@ -57,9 +57,7 @@ class LinkImage extends Component {
     handleUnlink = () => {
         const {image, projects} = this.props;
         const unLinkImage = image.projectId ? image : null;
-        console.log(projects);
         let projectFind = projects.find(i => i.icon === image.url);
-        console.log(projectFind);
         const project = projectFind ? projectFind : null;
 
         if(project != null) {

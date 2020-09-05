@@ -56,7 +56,9 @@ class UploadImage extends Component {
         return (
             <div>
                 <p>Upload project image</p>
-                <progress value ={this.state.progress}max="100"/>
+                <p>
+                    <progress value ={this.state.progress}max="100"/> {this.state.progress}%
+                </p>
                 <br />
                 <input type="file" onChange={this.handleChange} />
                 <button onClick={this.handleUpload}>Upload</button>

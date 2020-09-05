@@ -5,9 +5,11 @@ import {compose} from 'redux';
 import {Link} from 'react-router-dom';
 import {deleteProject} from '../../store/actions/projectActions';
 import { FaGithub } from 'react-icons/fa';
+import ProjectImageList from './project_images/ProjectImageList';
 
 const ProjectDetails = (props) => {
-    const {project, auth} = props;
+    const {project, auth, images} = props;
+    console.log(images)
     //TODO - Add optional icon and optional images? expand on formatting
     const adminOptions = auth.uid ? (
         <p>
@@ -24,6 +26,11 @@ const ProjectDetails = (props) => {
         <a href={project.git}> <FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
     ) : null;
 
+    const icon = project.icon ? (
+        <img src={project.icon} alt={project.title}/>
+    ) : null;
+
+
 
     if(project) {
         return (
@@ -31,11 +38,17 @@ const ProjectDetails = (props) => {
                 <div className="card z-depth-0">
                     <div className="card-content">
                         <div className="right">{adminOptions}{gitLink}</div>
+                        <div className="left">{icon}</div>
                         <span className="card-title">{project.title} </span>
                         <p>{project.content}</p>
                     </div>
                     <div className="card-action grey-lighten-4 grey-text">
                         <div>{project.technologyUsed}</div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <ProjectImageList images={images}/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,9 +67,11 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const projects = state.firestore.data.projects;
     const project = projects ? projects[id] : null;
+    const images = state.firestore.ordered.images;
     return {
         project: {id, ...project},
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        images: images
 
     }
 }
@@ -69,5 +84,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
-    firestoreConnect([{collection: 'projects'}
-    ]))(ProjectDetails)
+    firestoreConnect((props) => {return ([{collection: 'projects'}, {collection: 'images', where:[['projectId', '==', props.match.params.id]]}])}))
+    (ProjectDetails)
