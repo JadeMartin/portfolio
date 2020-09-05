@@ -60,6 +60,12 @@ class CreateProject extends Component {
                                                 <label htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
                                                 <input type="text" id="technologyUsed" onChange={this.handleChange}/>
                                             </div>
+
+                                            <div className="input-field">
+                                                <label htmlFor="priority">Priority level (higher means more likely to be shown first)</label>
+                                                <input type="number" id="priority" onChange={this.handleChange} />
+                                            </div>
+
                                         </div>
                                     <div className="card-action">
                                         <div className="input-field">

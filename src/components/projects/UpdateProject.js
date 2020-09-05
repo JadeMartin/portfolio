@@ -11,7 +11,8 @@ class CreateProject extends Component {
         summary: '',
         content: '',
         technologyUsed: '',
-        git: ''
+        git: '',
+        priority: 0
     }
 
     handleChange = (e) => {
@@ -30,6 +31,7 @@ class CreateProject extends Component {
             content: this.state.content ? this.state.content : project.content,
             technologyUsed: this.state.technologyUsed ? this.state.technologyUsed : project.technologyUsed,
             git: this.state.git ? this.state.git : project.git,
+            priority: this.state.priority ? this.state.priority : project.priority,
         });
         this.props.history.push('/');
     }
@@ -69,6 +71,11 @@ class CreateProject extends Component {
                                             <div className="input-field">
                                                 <label className="active" htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
                                                 <input type="text" id="technologyUsed" onChange={this.handleChange} defaultValue={project.technologyUsed}/>
+                                            </div>
+
+                                            <div className="input-field">
+                                                <label className="active" htmlFor="priority">Priority level (higher means more likely to be shown first)</label>
+                                                <input type="number" id="priority" onChange={this.handleChange} defaultValue={project.priority}/>
                                             </div>
                                             
                                         </div>
