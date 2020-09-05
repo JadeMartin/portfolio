@@ -97,31 +97,37 @@ class LinkImage extends Component {
         const {listOpen} = this.state;
         if(image) {
             return (
-                <div className="card z-depth-0 project-summary">
-                <div className="card-content grey-text text-darken-3">
-                    <div className="right">
-                        <BiUnlink className="material-icons blue-text" onClick={this.handleUnlink}/>
-                        <a href="/images" onClick={this.handleDeleteClick}> 
-                            <i className="material-icons blue-text">delete</i>
-                        </a>
-                    </div>
-                    <span className="card-title center">{image.photoName} </span>
-                    <p><img src={image.url} alt={image.photoName}/></p>
-                </div>
-                <div className="dd-wrapper">
-                    <div className="dd-header" onClick={() => this.toggleList()}>
-                        <div className="dd-header-title">{this.state.headerTitle}</div>
-                        {listOpen ? <i><RiArrowDropUpLine/></i> :<i><RiArrowDropDownLine/></i>}
+                <div className="container" id="containerUpload">
+                    <div className="row valign-wrapper" id="rowUpload">
+                        <div className="col s3 offset-s4 valign" >
+                            <div className="card hoverable" id="uploadCard">
+                                <div className="card-content">
+                                    <div className="right">
+                                        <BiUnlink className="material-icons blue-text" onClick={this.handleUnlink}/>
+                                        <a href="/images" onClick={this.handleDeleteClick}> 
+                                            <i className="material-icons blue-text">delete</i>
+                                        </a>
+                                    </div>
+                                    <span className="card-title">{image.photoName} </span>
+                                    <p><img className="responsive-img" src={image.url} alt={image.photoName}/></p>
+                                    <div className="dd-wrapper">
+                                        <div className="dd-header" onClick={() => this.toggleList()}>
+                                            <div className="dd-header-title">{this.state.headerTitle}</div>
+                                            {listOpen ? <i><RiArrowDropUpLine/></i> :<i><RiArrowDropDownLine/></i>}
 
-                        {listOpen && <ul className="dd-list">
-                            {projects.map((project) => (
-                                <li className="dd-list-item" key={project.id} onClick={ () => this.setState({...this.state, headerTitle: project.title, project : project})}>{project.title}</li>
-                            ))}
-                        </ul>}  
-                    </div>
-                    <div>
-                        <button onClick={this.handleClickIcon}>Set Icon</button> <button onClick={this.handleClickImage}>Set as image</button> 
-                        <p>{this.state.linkConfirmation}</p>
+                                            {listOpen && <ul className="dd-list">
+                                                {projects.map((project) => (
+                                                    <li className="dd-list-item" key={project.id} onClick={ () => this.setState({...this.state, headerTitle: project.title, project : project})}>{project.title}</li>
+                                                ))}
+                                            </ul>}  
+                                        </div>
+                                    </div>
+                                </div>
+                            <div className="card-action">
+                                <button onClick={this.handleClickIcon}>Set Icon</button> <button onClick={this.handleClickImage}>Set as image</button> 
+                                <p>{this.state.linkConfirmation}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
