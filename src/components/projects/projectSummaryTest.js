@@ -2,29 +2,25 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './projectCard.css';
 
-
 const ProjectSummary = ({ project }) => {
-
-    const badge = project.recent ? (<span className="card-badge orange"><i className="material-icons">fiber_new</i> {project.title} has been Recently added! </span>) : (<span className="card-title">{project.title}</span>);
+    const badge = project.recent ? (<span class="card-badge orange"><i class="material-icons">fiber_new</i> Recently added! </span>) : null;
     const projectIcon = project.icon ? (
-        <div className="card-image">
-            <img className="materialboxed responsive-img" id="projectIcon" src={project.icon} alt="Project Icon"/>
-            {badge}
-        </div>
+    <img className="responsive-img" src={project.icon} alt="No Icon">
+        {badge}
+        <span className="card-title">{project.title}</span>
+    </img>
     ) : (
-        <div className="card-image">
-            <img className="responsive-img" id="projectIcon" src="https://placehold.it/400x280" alt="No Icon"/>
-            {badge}
-        </div>
+    <img className="responsive-img"src="https://placehold.it/320x240" alt="No Icon">
+        {badge}
+        <span className="card-title">{project.title}</span>
+    </img>
     );
-
-
-
-    
 
     return (
             <div className="card hoverable">
-                {projectIcon}
+                <div className="card-image">
+                    {projectIcon}
+                </div>
                 <div className="card-content">
                     <p>{project.summary}</p>
                 </div>

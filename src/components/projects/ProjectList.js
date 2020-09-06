@@ -7,7 +7,7 @@ const ProjectList = ({projects}) => {
         <div className="row center-cols center-align">
             { projects && projects.map(project => {
                 return (
-                    <div className="col m4"  key={project.id}>
+                    <div className="col s12 m4"  key={project.id}>
                         <ProjectSummary project={project}/>
                     </div>
                 )

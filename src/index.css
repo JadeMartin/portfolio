@@ -60,4 +60,17 @@ body {
     margin-top: 50px;
 }
 
+@media screen and (max-width: 600px) {
+  #navTitle {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
+
+
 

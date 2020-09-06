@@ -1,0 +1,21 @@
+.card-badge {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	padding: 0.2em 24px 0.8em 24px;
+	color: #fff;
+    z-index: 2;
+}
+
+.card-title {
+    position:relative;
+	padding-bottom:66px;
+}
+
+#projectIcon {
+    width: 400px;
+    height: 280px;
+}

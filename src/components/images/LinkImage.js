@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {Redirect} from 'react-router-dom';
-import {RiArrowDropDownLine, RiArrowDropUpLine} from 'react-icons/ri';
+import {Link} from 'react-router-dom';
 import {updateProject} from '../../store/actions/projectActions';
 import {updateImage} from '../../store/actions/photoActions';
 import {deleteImage} from '../../store/actions/photoActions';
@@ -104,20 +104,25 @@ class LinkImage extends Component {
                                 <div className="card-content">
                                     <div className="right">
                                         <BiUnlink className="material-icons blue-text" onClick={this.handleUnlink}/>
-                                        <a href="/images" onClick={this.handleDeleteClick}> 
+                                        <Link href="/images" onClick={this.handleDeleteClick}> 
                                             <i className="material-icons blue-text">delete</i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <span className="card-title">{image.photoName} </span>
                                     <p><img className="responsive-img" src={image.url} alt={image.photoName}/></p>
                                     <div className="dd-wrapper">
                                         <div className="dd-header" onClick={() => this.toggleList()}>
-                                            <div className="dd-header-title">{this.state.headerTitle}</div>
-                                            {listOpen ? <i><RiArrowDropUpLine/></i> :<i><RiArrowDropDownLine/></i>}
+                                            <div className="dd-header-title">
+                                                <button>
+                                                    {this.state.headerTitle} 
+                                                    {" "}
+                                                    {listOpen ?  <i class=" tiny material-icons">arrow_upward</i> :  <i class="tiny material-icons">arrow_downward</i> } 
+                                                </button>
+                                            </div>
 
                                             {listOpen && <ul className="dd-list">
                                                 {projects.map((project) => (
-                                                    <li className="dd-list-item" key={project.id} onClick={ () => this.setState({...this.state, headerTitle: project.title, project : project})}>{project.title}</li>
+                                                    <button className="dd-list-item" key={project.id} onClick={ () => this.setState({...this.state, headerTitle: project.title, project : project})}>{project.title}</button>
                                                 ))}
                                             </ul>}  
                                         </div>

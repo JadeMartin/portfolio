@@ -4,13 +4,13 @@ import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {Link} from 'react-router-dom';
 import {deleteProject} from '../../store/actions/projectActions';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaGooglePlay } from 'react-icons/fa';
 import { AiFillEdit } from 'react-icons/ai';
 import ProjectImageList from './project_images/ProjectImageList';
 
+
 const ProjectDetails = (props) => {
     const {project, auth, images} = props;
-    console.log(images);
     let imageTitle = 'Images';
     if (images === undefined || images.length < 1) {
         imageTitle = null;
@@ -30,6 +30,14 @@ const ProjectDetails = (props) => {
         <a href={project.git}> <FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
     ) : null;
 
+    const webLink = project.webSite ? (
+        <a href={project.webSite}> <FaExternalLinkAlt className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
+    ) : null;
+
+    const appStore = project.appStore ? (
+        <a href={project.appStore}> <FaGooglePlay className="material-icons left iconsSolidBackground" aria-hidden="true" /></a>
+    ) : null;
+
     const icon = project.icon ? (
         <img src={project.icon} alt={project.title}/>
     ) : null;
@@ -41,7 +49,7 @@ const ProjectDetails = (props) => {
             <div className="container section project-details">
                 <div className="card hoverable">
                     <div className="card-content">
-                        <div className="right">{adminOptions}{gitLink}</div>
+                        <div className="right">{adminOptions}{gitLink}{webLink}{appStore}</div>
                         <div className="left">{icon}</div>
                         <span className="card-title"><h1>{project.title}</h1></span>
                         <p>{project.content}</p>

@@ -9,8 +9,12 @@ class CreateProject extends Component {
         summary: '',
         content: '',
         technologyUsed: '',
-        git: ''
-    }
+        git: '',
+        priority: 0,
+        webSite: '',
+        appStore: '',
+        recent: false,
+        }
 
     handleChange = (e) => {
         this.setState({
@@ -34,7 +38,7 @@ class CreateProject extends Component {
                                 <div className="col s0 offset-s3 valign" ></div>
                                     <div className="card hoverable" id="createCard">
                                         <div className="card-content">
-                                            <h5 className="card-title grey-text text-darken-3">Create new project</h5>
+                                            <span className="card-title grey-text text-darken-3">Create new project</span>
 
                                             <div className="input-field">
                                                 <label htmlFor="title">Title</label>
@@ -52,11 +56,6 @@ class CreateProject extends Component {
                                             </div>
 
                                             <div className="input-field">
-                                                <label htmlFor="git">Git link (Optional)</label>
-                                                <input type="text" id="git" onChange={this.handleChange} />
-                                            </div>
-
-                                            <div className="input-field">
                                                 <label htmlFor="technologyUsed">TechnologyUsed (CSV)</label>
                                                 <input type="text" id="technologyUsed" onChange={this.handleChange}/>
                                             </div>
@@ -64,6 +63,26 @@ class CreateProject extends Component {
                                             <div className="input-field">
                                                 <label htmlFor="priority">Priority level (higher means more likely to be shown first)</label>
                                                 <input type="number" id="priority" onChange={this.handleChange} />
+                                            </div>
+
+                                            <div className="input-field">
+                                                <label htmlFor="recent">Recent? adds a badge to the card default false</label>
+                                                <input type="text" id="recent" onChange={this.handleChange} />
+                                            </div>
+
+                                            <div className="input-field">
+                                                <label htmlFor="git">Git link (Optional)</label>
+                                                <input type="text" id="git" onChange={this.handleChange} />
+                                            </div>
+
+                                            <div className="input-field">
+                                                <label htmlFor="appStore">App store link (Optional)</label>
+                                                <input type="text" id="appStore" onChange={this.handleChange} />
+                                            </div>
+
+                                            <div className="input-field">
+                                                <label htmlFor="webSite">Website link (Optional)</label>
+                                                <input type="text" id="webSite" onChange={this.handleChange} />
                                             </div>
 
                                         </div>
