@@ -6,7 +6,6 @@ import Draggable from 'react-draggable';
 
 
 const UserCard = ({user}) => {
-    console.log(user);
     return(
         <Draggable>
                 <div className="parent">

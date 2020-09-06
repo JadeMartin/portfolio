@@ -4,7 +4,7 @@ import './projectCard.css';
 
 
 const ProjectSummary = ({ project }) => {
-
+    console.log(project);
     const badge = project.recent ? (<span className="card-badge orange"><i className="material-icons" id="newIcon">fiber_new</i> {project.title} has been Recently added! </span>) : (<span className="card-title">{project.title}</span>);
     const projectIcon = project.icon ? (
         <div className="card-image">

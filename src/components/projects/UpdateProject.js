@@ -37,7 +37,7 @@ class UpdateProject extends Component {
             priority: this.state.priority ? this.state.priority : project.priority,
             webSite: this.state.webSite ? this.state.webSite : project.webSite,
             appStore: this.state.appStore ? this.state.appStore : project.appStore,
-            recent: this.state.recent ? this.state.recent : project.recent,
+            recent: this.state.recent === 'true',
         });
         this.props.history.push('/');
     }
