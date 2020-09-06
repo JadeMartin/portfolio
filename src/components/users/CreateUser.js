@@ -10,7 +10,7 @@ class CreateUser extends Component {
         currentRole: '',
         email: '',
         linkedIn: '',
-        gitHub: '',
+        github: '',
         roleStatus: '',
         education: ''
     }

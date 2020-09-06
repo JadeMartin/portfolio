@@ -6,7 +6,7 @@ import Draggable from 'react-draggable';
 
 
 const UserCard = ({user}) => {
-
+    console.log(user);
     return(
         <Draggable>
                 <div className="parent">
@@ -61,7 +61,7 @@ const UserCard = ({user}) => {
                                         <div className="codingProfileURL col s12 valign-wrapper">
                                             <div className="iconWrapper z-depth-2 iconsSolidBackground">
                                                 <div className="icon">
-                                                    <a href={user[0].gitHub}>
+                                                    <a href={user[0].github}>
                                                         <FaGithub className="material-icons left iconsSolidBackground" aria-hidden="true" />
                                                     </a>
                                                 </div>

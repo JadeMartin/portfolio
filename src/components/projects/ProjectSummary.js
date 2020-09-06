@@ -5,10 +5,10 @@ import './projectCard.css';
 
 const ProjectSummary = ({ project }) => {
 
-    const badge = project.recent ? (<span className="card-badge orange"><i className="material-icons">fiber_new</i> {project.title} has been Recently added! </span>) : (<span className="card-title">{project.title}</span>);
+    const badge = project.recent ? (<span className="card-badge orange"><i className="material-icons" id="newIcon">fiber_new</i> {project.title} has been Recently added! </span>) : (<span className="card-title">{project.title}</span>);
     const projectIcon = project.icon ? (
         <div className="card-image">
-            <img className="materialboxed responsive-img" id="projectIcon" src={project.icon} alt="Project Icon"/>
+            <img className="responsive-img" id="projectIcon" src={project.icon} alt="Project Icon"/>
             {badge}
         </div>
     ) : (

@@ -13,7 +13,7 @@ class UpdateUser extends Component {
         email: '',
         password: '',
         linkedIn: '',
-        gitHub: '',
+        github: '',
         roleStatus: '',
         education: '',
     }
@@ -34,7 +34,7 @@ class UpdateUser extends Component {
             currentRole: this.state.currentRole ? this.state.currentRole : user.currentRole,
             email: this.state.email ? this.state.email : user.email,
             linkedIn: this.state.linkedIn ? this.state.linkedIn : user.linkedIn,
-            gitHub: this.state.gitHub ? this.state.gitHub : user.gitHub,
+            github: this.state.github ? this.state.github : user.github,
             roleStatus: this.state.roleStatus ? this.state.roleStatus : user.roleStatus,
             education: this.state.education ? this.state.education : user.education,
         });
@@ -51,7 +51,7 @@ class UpdateUser extends Component {
                         <div className="col s0 offset-s3 valign" ></div>
                             <div className="card hoverable" id="createCard">
                                 <div className="card-content">
-                                    <h5 className="card-title grey-text text-darken-3">Create new project</h5>
+                                    <h5 className="card-title grey-text text-darken-3">Update user</h5>
 
                                     <div className="input-field">
                                         <label className="active" htmlFor="firstName">First name</label>
@@ -94,7 +94,7 @@ class UpdateUser extends Component {
                                     </div>
                                 </div>
                                     <div className="input-field">
-                                    <button className="btn pink lighten-1 z-depth-0">Create</button>
+                                    <button className="btn pink lighten-1 z-depth-0">Update</button>
                                     <div className="red-text center">
                                         {authError ? <p>{authError}</p> : null}
                                     </div>

@@ -7,7 +7,7 @@ const ProjectImageList = ({images}) => {
             { images && images.map(image => {
                 return (
                     <div className="col m4" key={image.id}>
-                        <ProjectImageSummary image={image}/>
+                        <ProjectImageSummary image={image} />
                     </div>
                 )
             })}

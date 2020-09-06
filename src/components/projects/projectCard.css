@@ -19,3 +19,9 @@
     width: 400px;
     height: 280px;
 }
+
+#newIcon {
+	position:relative;
+	margin-right: 8px;
+	top: 7px;
+}

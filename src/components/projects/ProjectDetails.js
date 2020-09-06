@@ -9,6 +9,7 @@ import { AiFillEdit } from 'react-icons/ai';
 import ProjectImageList from './project_images/ProjectImageList';
 
 
+
 const ProjectDetails = (props) => {
     const {project, auth, images} = props;
     let imageTitle = 'Images';

@@ -8,9 +8,13 @@ import UserCard from '../users/UserCard';
 class AboutDashboard extends Component {
 
     render() {
-        const {user} = this.props
+        const {user, dummyUser} = this.props;
+        let userInfo = user;
+        if(typeof userInfo === 'undefined' || userInfo.length < 1) {
+            userInfo = dummyUser;
+        }
         return(
-            <UserCard user={user}/>
+            <UserCard user={userInfo}/>
         )
     }
 }
@@ -18,15 +22,17 @@ class AboutDashboard extends Component {
 const mapStateToProps = (state) => {
     const user = state.firestore.ordered.users;
     const dummyUser = [{
-        name: '',
+        firstName: '',
+        lastName: '',
         currentRole: '',
         email: '',
         linkedIn: '',
         gitHub: '',
         roleStatus: ''
-    }]
+    }];
     return {
-        user: user ? user : dummyUser
+        user: user,
+        dummyUser: dummyUser
     }
 }
 
