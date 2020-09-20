@@ -60,6 +60,14 @@ body {
     margin-top: 50px;
 }
 
+
+.__react_modal_image__modal_content {
+  max-width: 400px;
+  position: relative;
+  margin-top: 500px;
+  margin-left: 1000px;
+}
+
 @media screen and (max-width: 600px) {
   #navTitle {
     visibility: hidden;
@@ -69,7 +77,13 @@ body {
     width: 28%;
     display: none;
   }
+  .__react_modal_image__modal_content {
+    max-width: 200px;
+    position: relative;
+    margin-left: 200px;
+  }
 }
+
 
 
 
