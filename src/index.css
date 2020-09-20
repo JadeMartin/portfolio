@@ -63,9 +63,11 @@ body {
 
 .__react_modal_image__modal_content {
   max-width: 400px;
-  position: relative;
-  margin-top: 500px;
-  margin-left: 1000px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
 }
 
 @media screen and (max-width: 600px) {
@@ -79,8 +81,7 @@ body {
   }
   .__react_modal_image__modal_content {
     max-width: 200px;
-    position: relative;
-    margin-left: 200px;
+
   }
 }
 
