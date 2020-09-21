@@ -61,7 +61,7 @@ const ProjectDetails = (props) => {
                 </div>
             <div className="images container">
                 <h1 className="white-text">{imageTitle}</h1>
-                <ProjectImageList images={images}/>
+                <ProjectImageList images={images} app={project.appStore}/>
             </div>
         </div>
         )

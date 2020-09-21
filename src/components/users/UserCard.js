@@ -66,7 +66,7 @@ const UserCard = ({user}) => {
                                                 </div>
                                             </div>
                                             <div className="textWrapper">
-                                                <a href={user[0].gitHub}>Github</a>
+                                                <a href={user[0].github}>Github</a>
                                             </div>
                                         </div>
                                     </div>

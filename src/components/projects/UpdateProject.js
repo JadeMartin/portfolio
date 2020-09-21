@@ -15,7 +15,7 @@ class UpdateProject extends Component {
         priority: 0,
         webSite: '',
         appStore: '',
-        recent: false,
+        recent: '',
     }
 
     handleChange = (e) => {
@@ -37,7 +37,7 @@ class UpdateProject extends Component {
             priority: this.state.priority ? this.state.priority : project.priority,
             webSite: this.state.webSite ? this.state.webSite : project.webSite,
             appStore: this.state.appStore ? this.state.appStore : project.appStore,
-            recent: this.state.recent === 'true',
+            recent: this.state.recent ? this.state.recent : project.recent,
         });
         this.props.history.push('/');
     }
